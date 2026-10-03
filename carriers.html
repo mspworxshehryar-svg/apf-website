@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carriers: Submit POD | American Patriot Freight</title>
+<meta name="description" content="Carriers: submit your Proof of Delivery and Bill of Lading to American Patriot Freight.">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/logo.png" alt="American Patriot Freight logo"><span>AMERICAN PATRIOT<br>FREIGHT</span></a>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <nav id="site-nav" class="nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About Us</a>
+      <a href="carriers.html" aria-current="page">Carriers</a>
+      <a href="contact.html">Contact</a>
+      <a class="phone" href="tel:8445276537">844-527-6537</a>
+      <a class="btn btn-red" href="contact.html">Request a Quote</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="page-hero">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">Home</a> / Carriers</div>
+    <h1>Submit Your POD &amp; Delivery Documents</h1>
+    <p class="lead">For carriers hauling American Patriot Freight loads. Send your Proof of Delivery and Bill of Lading so we can process your load.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="section-head"><h2>How to submit</h2></div>
+    <div class="grid-4">
+      <div><div class="step-num">1</div><p>Enter your carrier information in the form below.</p></div>
+      <div><div class="step-num">2</div><p>Enter your Rate Confirmation Number.</p></div>
+      <div><div class="step-num">3</div><p>Attach a clear, legible Proof of Delivery that includes the receiver's signature and delivery date, plus the Bill of Lading.</p></div>
+      <div><div class="step-num">4</div><p>Add any delivery exception notes in the same submission.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block alt">
+  <div class="wrap" style="max-width:900px">
+    <form class="form" data-mailto="sales@americanpatriotfreight.com" data-subject="POD submission" data-done="Your email app should open with the load details filled in. Attach your POD and BOL to that email before sending.">
+      <fieldset>
+        <legend>Carrier information</legend>
+        <div class="row">
+          <div><label for="c-company">Carrier company name *</label><input id="c-company" name="carrier" data-label="Carrier" required></div>
+          <div><label for="c-mc">MC / DOT number *</label><input id="c-mc" name="mc" data-label="MC/DOT" required></div>
+        </div>
+        <div class="row">
+          <div><label for="c-contact">Contact person *</label><input id="c-contact" name="contact" data-label="Contact" required></div>
+          <div><label for="c-email">Email *</label><input id="c-email" name="email" data-label="Email" type="email" required></div>
+        </div>
+        <div class="row">
+          <div><label for="c-phone">Phone number *</label><input id="c-phone" name="phone" data-label="Phone" type="tel" required></div>
+          <div></div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Shipment information</legend>
+        <div class="row">
+          <div><label for="s-conf">Rate confirmation number *</label><input id="s-conf" name="ratecon" data-label="Rate confirmation #" required></div>
+          <div></div>
+        </div>
+        <div class="row">
+          <div><label for="s-pick">Pickup date &amp; time *</label><input id="s-pick" name="pickup" data-label="Pickup" type="datetime-local" required></div>
+          <div><label for="s-del">Delivery date &amp; time *</label><input id="s-del" name="delivery" data-label="Delivery" type="datetime-local" required></div>
+        </div>
+        <div class="row">
+          <div><label for="s-origin">Origin city / state *</label><input id="s-origin" name="origin" data-label="Origin" required></div>
+          <div><label for="s-dest">Delivery city / state *</label><input id="s-dest" name="destination" data-label="Destination" required></div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Driver information</legend>
+        <div class="row">
+          <div><label for="d-name">Full name *</label><input id="d-name" name="driver" data-label="Driver" required></div>
+          <div><label for="d-phone">Phone number *</label><input id="d-phone" name="driverphone" data-label="Driver phone" type="tel" required></div>
+        </div>
+        <div class="row">
+          <div><label for="d-truck">Truck / trailer number *</label><input id="d-truck" name="truck" data-label="Truck/trailer #" required></div>
+          <div></div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Notes</legend>
+        <div><label for="u-notes">Comments / delivery exceptions</label><textarea id="u-notes" name="notes" data-label="Notes"></textarea></div>
+        <p class="note">After you press Submit, your email app opens with these details. Attach your POD and BOL to that email and send it to sales@americanpatriotfreight.com.</p>
+      </fieldset>
+
+      <div class="check">
+        <input id="u-cert" type="checkbox" required>
+        <label for="u-cert">I certify this information is accurate *</label>
+      </div>
+      <div><button class="btn btn-red" type="submit">Submit</button></div>
+      <p class="form-status" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Want to haul for American Patriot Freight?</h2>
+    <div class="btn-row">
+      <a class="btn btn-red" href="contact.html">Become a Carrier</a>
+      <a class="btn btn-light" href="tel:8445276537">Call 844-527-6537</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="index.html"><img src="assets/logo.png" alt="American Patriot Freight logo"></a>
+        <p style="margin-top:16px">Seamless, secure, and transparent freight solutions across the nation, on time and without excuses.</p>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="services.html">Services</a>
+        <a href="about.html">About Us</a>
+        <a href="carriers.html">Carriers</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="tel:8445276537">844-527-6537</a>
+        <a href="mailto:sales@americanpatriotfreight.com">sales@americanpatriotfreight.com</a>
+        <p style="padding:6px 0;margin:0">6001 Southeast 156th Street<br>Oklahoma City, OK 73165</p>
+      </div>
+      <div>
+        <h4>Hours</h4>
+        <p>Monday – Friday<br>6:00 am – 8:00 pm</p>
+      </div>
+    </div>
+    <div class="legal">
+      <div>© <span id="year">2026</span> American Patriot Freight. All rights reserved.</div>
+      <div>Every mile. Every shipment. Without excuses.</div>
+    </div>
+  </div>
+</footer>
+<script src="assets/site.js"></script>
+</body>
+</html>
