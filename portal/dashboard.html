@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Customer Portal | American Patriot Freight</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="../assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="portal.css">
+</head>
+<body>
+<div class="demo-bar">Demo mockup with sample data. No real shipments, documents, or payments.</div>
+
+<header class="topbar">
+  <button class="side-btn" id="side-btn" aria-label="Open menu" aria-expanded="false"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  <a class="brand" href="#dashboard"><img src="../assets/logo.png" alt="American Patriot Freight"><span>CUSTOMER<br>PORTAL</span></a>
+  <form class="search" onsubmit="event.preventDefault();openTrack(document.getElementById('q').value)">
+    <label for="q" class="sr" style="position:absolute;left:-9999px">Track a load</label>
+    <input id="q" placeholder="Track by load #, PO #, or BOL #">
+  </form>
+  <div class="who">
+    <div class="avatar" aria-hidden="true">DC</div>
+    <span>Jordan Smith<br><small style="color:#c9c9e3">Demo Customer Co.</small></span>
+    <a class="logout" href="index.html">Log out</a>
+  </div>
+</header>
+
+<div class="shell">
+<nav class="sidebar" id="sidebar" aria-label="Portal">
+  <a class="book" href="#book"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Book a Load</a>
+  <a href="#dashboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h7v9H3zM14 3h7v5h-7zM14 12h7v9h-7zM3 16h7v5H3z"/></svg>Dashboard</a>
+  <a href="#shipments"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 6h13v10H1zM14 10h4l3 3v3h-7"/><circle cx="5.5" cy="18" r="1.8"/><circle cx="17.5" cy="18" r="1.8"/></svg>Shipments</a>
+  <a href="#track"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Track Shipment</a>
+  <a href="#quotes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4zM8 9h8M8 13h8M8 17h5"/></svg>Quotes</a>
+  <div class="group">Account</div>
+  <a href="#documents"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>Documents &amp; Agreements</a>
+  <a href="#invoices"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Invoices &amp; Payments</a>
+  <a href="#locations"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>Saved Locations</a>
+  <a href="#reports"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18M7 15v3M12 10v8M17 6v12"/></svg>Reports</a>
+  <a href="#users"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="4"/><path d="M1 21v-1a7 7 0 0 1 14 0v1M17 11a3 3 0 1 0 0-6M23 21v-1a6 6 0 0 0-4-5.6"/></svg>Users &amp; Settings</a>
+  <a href="#support"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Support</a>
+</nav>
+
+<main class="main">
+
+<!-- DASHBOARD -->
+<section class="view" id="v-dashboard">
+  <div class="page-title">
+    <div><h1>Welcome back, Jordan</h1><p>Here's what's moving for Demo Customer Co.</p></div>
+    <a class="btn btn-red" href="#book">+ Book a Load</a>
+  </div>
+  <div class="kpis">
+    <div class="kpi"><div class="label">In transit</div><div class="value" id="k-transit">0</div><div class="delta">loads on the road now</div></div>
+    <div class="kpi"><div class="label">Picking up this week</div><div class="value" id="k-pickup">0</div><div class="delta">scheduled pickups</div></div>
+    <div class="kpi"><div class="label">On-time delivery</div><div class="value">97%</div><div class="delta">last 90 days</div></div>
+    <div class="kpi"><div class="label">Open balance</div><div class="value" id="k-balance">$0</div><div class="delta"><a href="#invoices">View invoices</a></div></div>
+  </div>
+  <div class="box">
+    <h2>Active shipments <a href="#shipments">View all</a></h2>
+    <div class="tbl-wrap"><table><thead><tr><th>Load #</th><th>Route</th><th>Equipment</th><th>Pickup</th><th>Delivery</th><th>Status</th></tr></thead><tbody id="dash-active"></tbody></table></div>
+  </div>
+  <div class="cols">
+    <div class="box">
+      <h2>Needs your attention</h2>
+      <div class="tbl-wrap"><table><tbody>
+        <tr><td><span class="pill p-pending">Signature</span></td><td>2027 Rate Agreement is waiting for your signature</td><td><a href="#documents">Review</a></td></tr>
+        <tr><td><span class="pill p-due">Due soon</span></td><td>Invoice INV-20418 due Oct 10</td><td><a href="#invoices">Pay</a></td></tr>
+        <tr><td><span class="pill p-booked">Quote</span></td><td>Quote Q-5521 (Dallas → Denver) expires Oct 6</td><td><a href="#quotes">Book</a></td></tr>
+      </tbody></table></div>
+    </div>
+    <div class="box">
+      <h2>Recent activity</h2>
+      <ul class="timeline" style="margin-top:4px">
+        <li class="done"><div class="dot"></div><div><b>APF-1047 delivered</b> in Kansas City, MO. POD uploaded.<div class="when">Today, 9:12 am</div></div></li>
+        <li class="done"><div class="dot"></div><div><b>APF-1052 picked up</b> in Oklahoma City, OK<div class="when">Today, 7:40 am</div></div></li>
+        <li class="done"><div class="dot"></div><div><b>Rate confirmation</b> sent for APF-1055<div class="when">Yesterday, 4:05 pm</div></div></li>
+        <li class="done"><div class="dot"></div><div><b>Payment received</b>, $4,850.00 for INV-20391<div class="when">Sep 30</div></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK -->
+<section class="view" id="v-book">
+  <div class="page-title"><div><h1>Book a Load</h1><p>Tell us about your shipment. Your rep confirms the rate and carrier, usually within the hour during business hours.</p></div></div>
+  <form id="book-form" onsubmit="event.preventDefault();bookDone()">
+    <div class="box">
+      <h2>Pickup</h2>
+      <div class="row" style="margin-bottom:16px">
+        <div><label for="b-ship">Shipper (saved location)</label><select id="b-ship"><option>OKC Distribution Center: Oklahoma City, OK</option><option>Tulsa Plant: Tulsa, OK</option><option>Dallas Yard: Dallas, TX</option><option>+ New address</option></select></div>
+        <div><label for="b-pdate">Pickup date</label><input id="b-pdate" type="date" value="2026-10-07"></div>
+      </div>
+      <div class="row">
+        <div><label for="b-pwin">Pickup window</label><select id="b-pwin"><option>06:00 – 10:00</option><option>10:00 – 14:00</option><option>14:00 – 18:00</option><option>FCFS</option><option>Appointment</option></select></div>
+        <div><label for="b-pref">Pickup # / PO #</label><input id="b-pref" placeholder="Optional"></div>
+      </div>
+    </div>
+    <div class="box">
+      <h2>Delivery</h2>
+      <div class="row" style="margin-bottom:16px">
+        <div><label for="b-cons">Consignee (saved location)</label><select id="b-cons"><option>Midwest Retail DC: Kansas City, MO</option><option>Denver Warehouse: Denver, CO</option><option>Memphis Hub: Memphis, TN</option><option>+ New address</option></select></div>
+        <div><label for="b-ddate">Delivery date</label><input id="b-ddate" type="date" value="2026-10-08"></div>
+      </div>
+      <div class="row">
+        <div><label for="b-dwin">Delivery window</label><select id="b-dwin"><option>Appointment</option><option>FCFS</option><option>06:00 – 10:00</option><option>10:00 – 14:00</option></select></div>
+        <div><label for="b-dref">Delivery # / reference</label><input id="b-dref" placeholder="Optional"></div>
+      </div>
+    </div>
+    <div class="box">
+      <h2>Freight</h2>
+      <div class="opt-grid" style="margin-bottom:16px" role="radiogroup" aria-label="Equipment">
+        <label class="opt"><input type="radio" name="eq" checked><span>Dry Van 53'</span></label>
+        <label class="opt"><input type="radio" name="eq"><span>Reefer</span></label>
+        <label class="opt"><input type="radio" name="eq"><span>Flatbed</span></label>
+        <label class="opt"><input type="radio" name="eq"><span>Step Deck</span></label>
+        <label class="opt"><input type="radio" name="eq"><span>Conestoga</span></label>
+        <label class="opt"><input type="radio" name="eq"><span>Hotshot</span></label>
+        <label class="opt"><input type="radio" name="eq"><span>Lowboy / RGN</span></label>
+        <label class="opt"><input type="radio" name="eq"><span>Tanker</span></label>
+        <label class="opt"><input type="radio" name="eq"><span>Power Only</span></label>
+        <label class="opt"><input type="radio" name="eq"><span>LTL / Partial</span></label>
+      </div>
+      <div class="row" style="margin-bottom:16px">
+        <div><label for="b-com">Commodity</label><input id="b-com" placeholder="e.g. Palletized building materials"></div>
+        <div><label for="b-wt">Weight (lbs)</label><input id="b-wt" type="number" placeholder="42,000"></div>
+      </div>
+      <div class="row" style="margin-bottom:16px">
+        <div><label for="b-pcs">Pallets / pieces</label><input id="b-pcs" type="number" placeholder="22"></div>
+        <div><label for="b-dim">Dimensions (L × W × H)</label><input id="b-dim" placeholder="Only for oversize"></div>
+      </div>
+      <div style="font-weight:600;font-size:.9rem;margin-bottom:8px">Special requirements</div>
+      <div class="opt-grid">
+        <label class="opt"><input type="checkbox"><span>Hazmat</span></label>
+        <label class="opt"><input type="checkbox"><span>Tarps</span></label>
+        <label class="opt"><input type="checkbox"><span>Liftgate</span></label>
+        <label class="opt"><input type="checkbox"><span>Team drivers</span></label>
+        <label class="opt"><input type="checkbox"><span>High value</span></label>
+        <label class="opt"><input type="checkbox"><span>Cross border</span></label>
+      </div>
+    </div>
+    <div class="box">
+      <h2>Notes &amp; documents</h2>
+      <div style="margin-bottom:16px"><label for="b-notes">Instructions for the carrier</label><textarea id="b-notes" placeholder="Dock hours, contact on site, load securement notes…"></textarea></div>
+      <button type="button" class="btn btn-outline btn-sm" onclick="toast('Demo: file picker would open to attach a BOL or packing list.')">Attach BOL / packing list</button>
+    </div>
+    <div class="btn-row"><button class="btn btn-red" type="submit">Submit Booking</button><button class="btn btn-outline" type="button" onclick="toast('Demo: draft saved.')">Save as draft</button><button class="btn btn-outline" type="button" onclick="location.hash='quotes';toast('Demo: quote request sent to your rep.')">Request quote only</button></div>
+  </form>
+  <div class="box confirm" id="book-done" hidden>
+    <div class="check-big"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></div>
+    <h2 style="justify-content:center">Booking received: APF-1058</h2>
+    <p>Your rep will send the rate confirmation shortly. You'll get an email and a portal notification when a carrier is assigned.</p>
+    <div class="btn-row" style="justify-content:center"><a class="btn btn-red" href="#shipments">View shipments</a><button class="btn btn-outline" onclick="resetBook()">Book another</button></div>
+  </div>
+</section>
+
+<!-- SHIPMENTS -->
+<section class="view" id="v-shipments">
+  <div class="page-title"><div><h1>Shipments</h1><p>Every load you've booked with American Patriot Freight.</p></div><button class="btn btn-outline btn-sm" onclick="toast('Demo: CSV export would download.')">Export CSV</button></div>
+  <div class="filters" id="ship-filters"></div>
+  <div class="box"><div class="tbl-wrap"><table><thead><tr><th>Load #</th><th>PO #</th><th>Route</th><th>Equipment</th><th>Pickup</th><th>Delivery</th><th>Status</th><th>Docs</th></tr></thead><tbody id="ship-body"></tbody></table></div></div>
+</section>
+
+<!-- TRACK -->
+<section class="view" id="v-track">
+  <div class="page-title"><div><h1>Track Shipment</h1><p>Live status, location, and documents for a load.</p></div>
+    <form class="btn-row" onsubmit="event.preventDefault();openTrack(document.getElementById('t-q').value)"><label for="t-q" style="position:absolute;left:-9999px">Load number</label><input id="t-q" placeholder="Load #, PO # or BOL #" style="width:240px"><button class="btn btn-red btn-sm" style="min-height:48px">Track</button></form>
+  </div>
+  <div id="track-body"></div>
+</section>
+
+<!-- QUOTES -->
+<section class="view" id="v-quotes">
+  <div class="page-title"><div><h1>Quotes</h1><p>Rates from your rep. Book an accepted quote in one click.</p></div><a class="btn btn-red btn-sm" href="#book">Request a quote</a></div>
+  <div class="box"><div class="tbl-wrap"><table><thead><tr><th>Quote #</th><th>Lane</th><th>Equipment</th><th>Ship date</th><th>Rate</th><th>Expires</th><th>Status</th><th></th></tr></thead><tbody>
+    <tr><td><b>Q-5521</b></td><td>Dallas, TX → Denver, CO</td><td>Dry Van</td><td>Oct 9</td><td><b>$2,450.00</b><span class="sub">all-in</span></td><td>Oct 6</td><td><span class="pill p-transit">Ready</span></td><td><button class="btn btn-red btn-sm" onclick="location.hash='book';toast('Quote Q-5521 loaded into booking form.')">Book</button></td></tr>
+    <tr><td><b>Q-5519</b></td><td>Tulsa, OK → Memphis, TN</td><td>Flatbed + tarps</td><td>Oct 14</td><td><b>$1,980.00</b><span class="sub">all-in</span></td><td>Oct 8</td><td><span class="pill p-transit">Ready</span></td><td><button class="btn btn-red btn-sm" onclick="location.hash='book';toast('Quote Q-5519 loaded into booking form.')">Book</button></td></tr>
+    <tr><td><b>Q-5514</b></td><td>Oklahoma City, OK → Laredo, TX</td><td>Dry Van, cross border</td><td>Oct 20</td><td><span class="sub">Rep is pricing</span></td><td>—</td><td><span class="pill p-booked">Pending</span></td><td></td></tr>
+    <tr><td><b>Q-5490</b></td><td>Oklahoma City, OK → Kansas City, MO</td><td>Dry Van</td><td>Sep 29</td><td><b>$1,325.00</b></td><td>Sep 26</td><td><span class="pill p-delivered">Booked</span></td><td><button class="link-btn" onclick="openTrack('APF-1047')">APF-1047</button></td></tr>
+  </tbody></table></div></div>
+</section>
+
+<!-- DOCUMENTS -->
+<section class="view" id="v-documents">
+  <div class="page-title"><div><h1>Documents &amp; Agreements</h1><p>Signed agreements, account paperwork, and shipment documents in one place.</p></div></div>
+  <div class="box">
+    <h2>Agreements</h2>
+    <div class="tbl-wrap"><table><thead><tr><th>Document</th><th>Signed by</th><th>Date</th><th>Status</th><th></th></tr></thead><tbody>
+      <tr><td><b>2027 Rate Agreement</b><span class="sub">Contracted lane rates, Jan–Dec 2027</span></td><td>—</td><td>Sent Oct 1, 2026</td><td><span class="pill p-pending">Awaiting signature</span></td><td><button class="btn btn-red btn-sm" onclick="toast('Demo: e-signature window would open.')">Review &amp; sign</button></td></tr>
+      <tr><td><b>Broker-Shipper Agreement</b><span class="sub">Master services agreement</span></td><td>Jordan Smith</td><td>Feb 12, 2026</td><td><span class="pill p-delivered">Signed</span></td><td><button class="link-btn" onclick="toast('Demo: PDF would open.')">View</button><button class="link-btn" onclick="toast('Demo: PDF would download.')">Download</button></td></tr>
+      <tr><td><b>Credit Application</b><span class="sub">Net 30 terms approved</span></td><td>Jordan Smith</td><td>Feb 10, 2026</td><td><span class="pill p-delivered">Signed</span></td><td><button class="link-btn" onclick="toast('Demo: PDF would open.')">View</button><button class="link-btn" onclick="toast('Demo: PDF would download.')">Download</button></td></tr>
+      <tr><td><b>Accessorial Schedule</b><span class="sub">Detention, layover, TONU, lumper rates</span></td><td>Jordan Smith</td><td>Feb 12, 2026</td><td><span class="pill p-delivered">Signed</span></td><td><button class="link-btn" onclick="toast('Demo: PDF would open.')">View</button><button class="link-btn" onclick="toast('Demo: PDF would download.')">Download</button></td></tr>
+    </tbody></table></div>
+  </div>
+  <div class="cols">
+    <div class="box">
+      <h2>APF company documents</h2>
+      <div class="tbl-wrap"><table><tbody>
+        <tr><td><b>Certificate of Insurance</b><span class="sub">Contingent cargo &amp; liability · exp. [DATE]</span></td><td><button class="link-btn" onclick="toast('Demo: PDF would download.')">Download</button></td></tr>
+        <tr><td><b>W-9</b><span class="sub">American Patriot Freight</span></td><td><button class="link-btn" onclick="toast('Demo: PDF would download.')">Download</button></td></tr>
+        <tr><td><b>Broker Authority (MC)</b><span class="sub">FMCSA operating authority</span></td><td><button class="link-btn" onclick="toast('Demo: PDF would download.')">Download</button></td></tr>
+        <tr><td><b>Surety Bond (BMC-84)</b></td><td><button class="link-btn" onclick="toast('Demo: PDF would download.')">Download</button></td></tr>
+      </tbody></table></div>
+    </div>
+    <div class="box">
+      <h2>Recent shipment documents <a href="#shipments">All shipments</a></h2>
+      <div class="tbl-wrap"><table><tbody>
+        <tr><td><b>POD</b> · APF-1047<span class="sub">Signed by receiver, Oct 3</span></td><td><button class="link-btn" onclick="toast('Demo: PDF would open.')">View</button></td></tr>
+        <tr><td><b>BOL</b> · APF-1047<span class="sub">Oct 2</span></td><td><button class="link-btn" onclick="toast('Demo: PDF would open.')">View</button></td></tr>
+        <tr><td><b>Rate Confirmation</b> · APF-1055<span class="sub">Oct 2</span></td><td><button class="link-btn" onclick="toast('Demo: PDF would open.')">View</button></td></tr>
+        <tr><td><b>POD</b> · APF-1041<span class="sub">Sep 26</span></td><td><button class="link-btn" onclick="toast('Demo: PDF would open.')">View</button></td></tr>
+      </tbody></table></div>
+    </div>
+  </div>
+</section>
+
+<!-- INVOICES -->
+<section class="view" id="v-invoices">
+  <div class="page-title"><div><h1>Invoices &amp; Payments</h1><p>Terms: Net 30. Pay by ACH or card, or download a statement.</p></div><button class="btn btn-outline btn-sm" onclick="toast('Demo: statement PDF would download.')">Download statement</button></div>
+  <div class="kpis">
+    <div class="kpi"><div class="label">Open balance</div><div class="value" id="i-open">$0</div></div>
+    <div class="kpi"><div class="label">Current</div><div class="value" id="i-cur">$0</div></div>
+    <div class="kpi"><div class="label">1–30 days past due</div><div class="value" id="i-past">$0</div></div>
+    <div class="kpi"><div class="label">Paid last 30 days</div><div class="value">$9,175</div></div>
+  </div>
+  <div class="box"><div class="tbl-wrap"><table><thead><tr><th>Invoice #</th><th>Load #</th><th>Invoice date</th><th>Due</th><th>Amount</th><th>Status</th><th></th></tr></thead><tbody id="inv-body"></tbody></table></div></div>
+</section>
+
+<!-- LOCATIONS -->
+<section class="view" id="v-locations">
+  <div class="page-title"><div><h1>Saved Locations</h1><p>Shippers and consignees you use often, with dock hours and contacts.</p></div><button class="btn btn-red btn-sm" onclick="toast('Demo: add location form would open.')">+ Add location</button></div>
+  <div class="box"><div class="tbl-wrap"><table><thead><tr><th>Name</th><th>Address</th><th>Type</th><th>Hours</th><th>Contact</th><th></th></tr></thead><tbody>
+    <tr><td><b>OKC Distribution Center</b></td><td>[Street], Oklahoma City, OK</td><td>Shipper</td><td>Mon–Fri 6a–4p</td><td>Dock office<span class="sub">(555) 010-0101</span></td><td><button class="link-btn" onclick="toast('Demo: edit form would open.')">Edit</button></td></tr>
+    <tr><td><b>Tulsa Plant</b></td><td>[Street], Tulsa, OK</td><td>Shipper</td><td>24/7, appt.</td><td>Shipping<span class="sub">(555) 010-0102</span></td><td><button class="link-btn" onclick="toast('Demo: edit form would open.')">Edit</button></td></tr>
+    <tr><td><b>Midwest Retail DC</b></td><td>[Street], Kansas City, MO</td><td>Consignee</td><td>Mon–Sat 5a–1p, appt.</td><td>Receiving<span class="sub">(555) 010-0103</span></td><td><button class="link-btn" onclick="toast('Demo: edit form would open.')">Edit</button></td></tr>
+    <tr><td><b>Denver Warehouse</b></td><td>[Street], Denver, CO</td><td>Consignee</td><td>Mon–Fri 7a–3p</td><td>Receiving<span class="sub">(555) 010-0104</span></td><td><button class="link-btn" onclick="toast('Demo: edit form would open.')">Edit</button></td></tr>
+  </tbody></table></div></div>
+</section>
+
+<!-- REPORTS -->
+<section class="view" id="v-reports">
+  <div class="page-title"><div><h1>Reports</h1><p>Freight spend and performance for your account.</p></div><button class="btn btn-outline btn-sm" onclick="toast('Demo: report PDF would download.')">Download report</button></div>
+  <div class="kpis">
+    <div class="kpi"><div class="label">Loads YTD</div><div class="value">142</div></div>
+    <div class="kpi"><div class="label">Freight spend YTD</div><div class="value">$268K</div></div>
+    <div class="kpi"><div class="label">Avg cost / load</div><div class="value">$1,887</div></div>
+    <div class="kpi"><div class="label">On-time delivery</div><div class="value">97%</div></div>
+  </div>
+  <div class="cols">
+    <div class="box"><h2>Monthly freight spend (sample)</h2><div class="bars" id="bars"></div><div class="bar-labels" id="bar-labels"></div></div>
+    <div class="box"><h2>Top lanes</h2><div class="tbl-wrap"><table><thead><tr><th>Lane</th><th>Loads</th><th>Avg rate</th></tr></thead><tbody>
+      <tr><td>Oklahoma City, OK → Kansas City, MO</td><td>38</td><td>$1,340</td></tr>
+      <tr><td>Tulsa, OK → Memphis, TN</td><td>27</td><td>$1,960</td></tr>
+      <tr><td>Dallas, TX → Denver, CO</td><td>21</td><td>$2,410</td></tr>
+      <tr><td>Oklahoma City, OK → Laredo, TX</td><td>14</td><td>$1,780</td></tr>
+    </tbody></table></div></div>
+  </div>
+</section>
+
+<!-- USERS -->
+<section class="view" id="v-users">
+  <div class="page-title"><div><h1>Users &amp; Settings</h1><p>Manage who on your team can book, track, and pay.</p></div><button class="btn btn-red btn-sm" onclick="toast('Demo: invite form would open.')">+ Invite user</button></div>
+  <div class="box"><h2>Team</h2><div class="tbl-wrap"><table><thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Last login</th><th></th></tr></thead><tbody>
+    <tr><td><b>Jordan Smith</b></td><td>jordan@example.com</td><td>Admin</td><td>Today</td><td></td></tr>
+    <tr><td><b>Casey Lee</b></td><td>casey@example.com</td><td>Shipping (book &amp; track)</td><td>Yesterday</td><td><button class="link-btn" onclick="toast('Demo: edit role.')">Edit</button></td></tr>
+    <tr><td><b>Morgan Diaz</b></td><td>ap@example.com</td><td>Accounts payable (invoices only)</td><td>Sep 28</td><td><button class="link-btn" onclick="toast('Demo: edit role.')">Edit</button></td></tr>
+  </tbody></table></div></div>
+  <div class="box" style="max-width:720px"><h2>Notifications</h2>
+    <div class="toggle-row"><label for="n1" style="margin:0">Email me when a load is picked up</label><input id="n1" type="checkbox" checked></div>
+    <div class="toggle-row"><label for="n2" style="margin:0">Email me when a load is delivered (with POD)</label><input id="n2" type="checkbox" checked></div>
+    <div class="toggle-row"><label for="n3" style="margin:0">Text me delay or exception alerts</label><input id="n3" type="checkbox" checked></div>
+    <div class="toggle-row"><label for="n4" style="margin:0">Email new invoices to accounts payable</label><input id="n4" type="checkbox"></div>
+    <div style="margin-top:16px"><button class="btn btn-outline btn-sm" onclick="toast('Demo: password change form would open.')">Change password</button></div>
+  </div>
+</section>
+
+<!-- SUPPORT -->
+<section class="view" id="v-support">
+  <div class="page-title"><div><h1>Support</h1><p>Your dedicated account rep and message history.</p></div></div>
+  <div class="cols">
+    <div class="box">
+      <h2>Your account rep</h2>
+      <div class="rep"><div class="avatar" aria-hidden="true">AR</div><div><b>[Rep Name]</b><br><a href="tel:8445276537">844-527-6537</a><br><a href="mailto:sales@americanpatriotfreight.com">sales@americanpatriotfreight.com</a></div></div>
+      <p class="note" style="margin-top:16px">Office hours Mon–Fri, 6:00 am – 8:00 pm CT. After-hours issues on loads in transit: call the main line.</p>
+    </div>
+    <div class="box">
+      <h2>Messages</h2>
+      <div class="msg"><div class="meta">APF · Oct 2, 4:05 pm</div>Rate confirmation for APF-1055 is in your documents. Driver assigned, pickup Monday 8 am.</div>
+      <div class="msg me"><div class="meta">You · Oct 2, 4:20 pm</div>Thanks. Can the driver call the dock 30 min out?</div>
+      <div class="msg"><div class="meta">APF · Oct 2, 4:22 pm</div>Done, added to the carrier instructions.</div>
+      <form onsubmit="event.preventDefault();this.reset();toast('Demo: message sent to your rep.')" style="display:flex;gap:8px;margin-top:12px"><label for="m" style="position:absolute;left:-9999px">Message</label><input id="m" placeholder="Write a message…"><button class="btn btn-red btn-sm" style="min-height:48px">Send</button></form>
+    </div>
+  </div>
+</section>
+
+</main>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script src="portal.js"></script>
+</body>
+</html>

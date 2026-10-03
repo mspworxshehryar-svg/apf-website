@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Customer Login | American Patriot Freight</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="../assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+body{background:var(--navy);min-height:100vh;display:flex;flex-direction:column}
+.demo-bar{background:#ffd54a;color:#1b1b22;text-align:center;font-size:.85rem;font-weight:600;padding:8px 16px}
+.login-wrap{flex:1;display:flex;align-items:center;justify-content:center;padding:40px 20px}
+.login-card{background:#fff;border-radius:8px;width:100%;max-width:420px;padding:40px 32px;box-shadow:0 20px 60px rgba(0,0,0,.35);display:flex;flex-direction:column;gap:18px}
+.login-card img{width:120px;margin:0 auto;border-radius:6px}
+.login-card h1{font-size:1.5rem;text-align:center;margin:0}
+.login-card .sub{text-align:center;color:var(--muted);margin:0;font-size:.95rem}
+.login-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;font-size:.9rem}
+.login-row .check label{font-weight:500}
+.login-card .btn{width:100%}
+.back{color:#c9c9e3;text-align:center;padding:0 0 32px;font-size:.9rem}
+.back a{color:#fff}
+</style>
+</head>
+<body>
+<div class="demo-bar">Demo mockup: any username and password will work. Nothing you type is sent or stored.</div>
+<div class="login-wrap">
+  <form class="login-card" id="login">
+    <a href="../index.html"><img src="../assets/logo.png" alt="American Patriot Freight home"></a>
+    <h1>Customer Portal</h1>
+    <p class="sub">Book loads, track shipments, and manage your documents.</p>
+    <div><label for="u">Username or email</label><input id="u" autocomplete="off"></div>
+    <div><label for="p">Password</label><input id="p" type="password" autocomplete="off"></div>
+    <div class="login-row">
+      <div class="check"><input id="rem" type="checkbox"><label for="rem">Remember me</label></div>
+      <a href="#" onclick="alert('Demo: password reset would email a link here.');return false">Forgot password?</a>
+    </div>
+    <button class="btn btn-red" type="submit">Log In</button>
+    <p class="sub" style="font-size:.85rem">New customer? <a href="../contact.html">Request portal access</a></p>
+  </form>
+</div>
+<p class="back"><a href="../index.html">← Back to americanpatriotfreight.com</a></p>
+<script>
+document.getElementById('login').addEventListener('submit', function (e) {
+  e.preventDefault();
+  window.location.href = 'dashboard.html';
+});
+</script>
+</body>
+</html>
