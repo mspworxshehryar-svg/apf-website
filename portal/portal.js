@@ -1,8 +1,8 @@
 // Sample data for the demo portal
 var loads = [
-  { id: 'APF-1052', po: 'PO-88231', from: 'Oklahoma City, OK', to: 'Kansas City, MO', eq: 'Dry Van 53\'', pick: 'Oct 3, 7:40 am', del: 'Oct 4, 6:00 am', status: 'transit', carrier: 'Sample Carrier LLC', driver: 'D. Brooks', truck: 'Tr 412 / Trl 5309', weight: '41,800 lbs', miles: 350, done: 2, eta: 'Oct 4, 5:30 am', at: 'Near Wichita, KS (I-35 N)' },
+  { id: 'APF-1052', po: 'PO-88231', from: 'Oklahoma City, OK', to: 'Kansas City, MO', eq: 'Dry Van 53\'', pick: 'Oct 3, 7:40 am', del: 'Oct 4, 6:00 am', status: 'transit', carrier: 'Sample Carrier LLC', driver: 'D. Brooks', truck: 'Tr 412 / Trl 5309', weight: '41,800 lbs', miles: 350, done: 3, eta: 'Oct 4, 5:30 am', at: 'Near Wichita, KS (I-35 N)' },
   { id: 'APF-1050', po: 'PO-88219', from: 'Tulsa, OK', to: 'Memphis, TN', eq: 'Flatbed + tarps', pick: 'Oct 2, 9:00 am', del: 'Oct 3, 4:00 pm', status: 'transit', carrier: 'Sample Haulers Inc', driver: 'R. Patel', truck: 'Tr 77 / Trl F-21', weight: '44,200 lbs', miles: 400, done: 3, eta: 'Oct 3, 3:15 pm', at: 'Near West Memphis, AR (I-40 E)' },
-  { id: 'APF-1055', po: 'PO-88240', from: 'Dallas, TX', to: 'Denver, CO', eq: 'Dry Van 53\'', pick: 'Oct 6, 8:00 am', del: 'Oct 7, 2:00 pm', status: 'booked', carrier: 'Assigned', driver: '—', truck: '—', weight: '38,000 lbs', miles: 790, done: 1, eta: 'Oct 7, 2:00 pm', at: 'Awaiting pickup' },
+  { id: 'APF-1055', po: 'PO-88240', from: 'Dallas, TX', to: 'Denver, CO', eq: 'Dry Van 53\'', pick: 'Oct 6, 8:00 am', del: 'Oct 7, 2:00 pm', status: 'booked', carrier: 'Sample Carrier LLC', driver: 'Pending', truck: '—', weight: '38,000 lbs', miles: 790, done: 2, eta: 'Oct 7, 2:00 pm', at: 'Awaiting pickup' },
   { id: 'APF-1056', po: 'PO-88244', from: 'Oklahoma City, OK', to: 'Laredo, TX', eq: 'Dry Van, cross border', pick: 'Oct 7, 6:00 am', del: 'Oct 8, 1:00 pm', status: 'pickup', carrier: 'Sample Freightways', driver: 'Pending', truck: '—', weight: '40,500 lbs', miles: 660, done: 1, eta: 'Oct 8, 1:00 pm', at: 'Awaiting pickup' },
   { id: 'APF-1047', po: 'PO-88190', from: 'Oklahoma City, OK', to: 'Kansas City, MO', eq: 'Dry Van 53\'', pick: 'Oct 2, 6:30 am', del: 'Oct 3, 9:12 am', status: 'delivered', carrier: 'Sample Carrier LLC', driver: 'D. Brooks', truck: 'Tr 412 / Trl 5309', weight: '42,000 lbs', miles: 350, done: 5, eta: 'Delivered', at: 'Kansas City, MO' },
   { id: 'APF-1041', po: 'PO-88152', from: 'Dallas, TX', to: 'Denver, CO', eq: 'Dry Van 53\'', pick: 'Sep 24, 7:00 am', del: 'Sep 26, 10:40 am', status: 'delivered', carrier: 'Sample Haulers Inc', driver: 'M. Ruiz', truck: 'Tr 19 / Trl 880', weight: '36,900 lbs', miles: 790, done: 5, eta: 'Delivered', at: 'Denver, CO' },
@@ -74,15 +74,15 @@ renderShipments();
 
 // Tracking
 var steps = ['Booked', 'Carrier assigned', 'Picked up', 'In transit', 'Delivered'];
-function openTrack(q) {
+function openTrack(q, quiet) {
   q = (q || '').trim().toUpperCase();
   var l = loads.find(function (x) { return x.id === q || x.po === q || x.id.replace('APF-', '') === q; }) || loads[0];
-  if (location.hash !== '#track') location.hash = 'track';
+  if (!quiet && location.hash !== '#track') location.hash = 'track';
   var pct = Math.min(l.done / 4, 1);
   var tl = steps.map(function (s, i) {
     var cls = i < l.done ? 'done' : i === l.done ? 'now' : '';
     if (l.status === 'delivered') cls = 'done';
-    var when = i < l.done || l.status === 'delivered' ? (i === 0 ? 'Rate confirmed' : i === 2 ? l.pick : i === 4 ? l.del : 'Completed') : i === l.done ? 'Up next' : '';
+    var when = i < l.done || l.status === 'delivered' ? (i === 0 ? 'Rate confirmed' : i === 2 ? l.pick : i === 4 ? l.del : 'Completed') : i === l.done ? (i === 3 ? l.at : 'Up next') : '';
     return '<li class="' + cls + '"><div class="dot"></div><div><b>' + s + '</b><div class="when">' + when + '</div></div></li>';
   }).join('');
   var x = 40 + 520 * pct;
@@ -112,7 +112,7 @@ function openTrack(q) {
     '</tbody></table></div><div class="btn-row" style="margin-top:16px"><button class="btn btn-outline btn-sm" onclick="toast(\'Demo: a tracking link was copied to share with your customer.\')">Share tracking link</button><a class="btn btn-outline btn-sm" href="#support">Message rep</a></div></div></div>';
   $('t-q').value = l.id;
 }
-openTrack('APF-1052');
+openTrack('APF-1052', true);
 
 // Invoices
 $('inv-body').innerHTML = invoices.map(function (i) {
