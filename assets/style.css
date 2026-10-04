@@ -182,9 +182,9 @@ div:hover>.step-num{scale:1.15;box-shadow:var(--glow-red)}
 .panel>*{position:relative}
 .panel h3{color:#fff;font-size:1.5rem}
 .panel p{color:#e4e4f2}
-.panel.light{background:#fff;color:var(--ink);border:2px solid var(--navy)}
-.panel.light h3{color:var(--navy)}
-.panel.light p{color:var(--muted)}
+.panel.panel-light{background:#fff;color:var(--ink);border:2px solid var(--navy)}
+.panel.panel-light h3{color:var(--navy)}
+.panel.panel-light p{color:var(--muted)}
 
 .cta{color:#fff}
 .cta .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;padding-top:64px;padding-bottom:64px}
