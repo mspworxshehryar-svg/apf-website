@@ -30,12 +30,26 @@ revealEls.forEach(function (el) {
   el.style.setProperty('--d', Math.min(sibs.indexOf(el), 6) * 90 + 'ms');
 });
 if ('IntersectionObserver' in window && !reduceMotion) {
+  var ioFired = false;
+  // Safety net: if the observer never reports (throttled or unsupported rendering), show everything
+  setTimeout(function () {
+    if (!ioFired) document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
+  }, 1500);
   var io = new IntersectionObserver(function (entries) {
+    ioFired = true;
     entries.forEach(function (e) {
       if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+  document.querySelectorAll('.reveal').forEach(function (el) {
+    // Anything already on screen animates in right away instead of waiting on the observer
+    if (el.getBoundingClientRect().top < window.innerHeight) {
+      requestAnimationFrame(function () { requestAnimationFrame(function () { el.classList.add('in'); }); });
+      setTimeout(function () { el.classList.add('in'); }, 600);
+    } else {
+      io.observe(el);
+    }
+  });
   // Accent underlines draw in when their heading comes into view
   document.querySelectorAll('.accent').forEach(function (a) {
     var ao = new IntersectionObserver(function (en) {
