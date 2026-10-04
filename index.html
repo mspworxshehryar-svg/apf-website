@@ -12,6 +12,18 @@
 </head>
 <body>
 
+<div class="utility">
+  <div class="wrap">
+    <div class="u-group">
+      <a href="tel:8445276537"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>844-527-6537</a>
+      <a class="u-hide-sm" href="mailto:sales@americanpatriotfreight.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M4 6l8 7 8-7"/></svg>sales@americanpatriotfreight.com</a>
+    </div>
+    <div class="u-group">
+      <a href="carriers.html">Submit POD</a>
+      <a href="portal/index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Customer Login</a>
+    </div>
+  </div>
+</div>
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="index.html"><img src="assets/logo.png" alt="American Patriot Freight logo"><span>AMERICAN PATRIOT<br>FREIGHT</span></a>
@@ -19,11 +31,10 @@
     <nav id="site-nav" class="nav" aria-label="Main">
       <a href="index.html" aria-current="page">Home</a>
       <a href="services.html">Services</a>
+      <a href="delivery.html">Delivery</a>
       <a href="about.html">About Us</a>
       <a href="carriers.html">Carriers</a>
       <a href="contact.html">Contact</a>
-      <a href="portal/index.html">Customer Login</a>
-      <a class="phone" href="tel:8445276537">844-527-6537</a>
       <a class="btn btn-red" href="contact.html">Request a Quote</a>
     </nav>
   </div>
@@ -33,7 +44,7 @@
 <section class="hero" style="background-image:linear-gradient(rgba(20,16,70,.72),rgba(20,16,70,.72)),url('assets/hero.jpg')">
   <div class="wrap">
     <div class="eyebrow">Nationwide freight brokerage</div>
-    <h1>Every mile, every shipment, without excuses.</h1>
+    <h1>Every mile, every shipment, <span class="accent">without excuses.</span></h1>
     <p class="lead">We don't hide behind delays or offer empty explanations. We connect shippers with an elite network of certified, highly vetted carriers and manage the logistics, routing, and equipment sourcing for you.</p>
     <div class="btn-row">
       <a class="btn btn-red" href="contact.html">Request a Quote</a>
@@ -55,7 +66,7 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">What we move</div>
-      <h2>Our Services</h2>
+      <h2>Our <span class="accent">Services</span></h2>
       <p class="lead">From a single pallet to complex heavy haul, hazmat, and cross-border transport, we manage the intricate logistics so you don't have to.</p>
     </div>
     <div class="grid-3">
@@ -84,29 +95,50 @@
   </div>
 </section>
 
-<section class="block alt">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Simple from start to finish</div>
-      <h2>How Freight Brokerage Works</h2>
+<section class="process dark bg-navy-gradient" id="delivery-process">
+  <div class="wrap center">
+    <div class="section-head" style="margin-bottom:0">
+      <div class="eyebrow dot">How delivery works</div>
+      <h2>From first call to signed POD.<br><span class="accent">We take it from here.</span></h2>
+      <p class="lead">A clear path from quote to delivery. We handle the carriers, the paperwork, and the tracking, so you don't have to.</p>
     </div>
-    <div class="grid-3">
-      <div>
-        <div class="step-num">1</div>
-        <h3>Tell us about your load</h3>
-        <p>Send your lanes, dates, and freight details through our quote form, by phone, or by email.</p>
-      </div>
-      <div>
-        <div class="step-num">2</div>
-        <h3>We source the right carrier</h3>
-        <p>We match your shipment with a certified, vetted carrier and the right equipment for the job.</p>
-      </div>
-      <div>
-        <div class="step-num">3</div>
-        <h3>Track it to delivery</h3>
-        <p>Visibility from pickup to destination, with transparent communication the whole way.</p>
+    <div class="track-scroll">
+      <div class="track">
+        <div class="track-line" aria-hidden="true"></div>
+        <div class="track-fill" aria-hidden="true"></div>
+        <span class="light" aria-hidden="true"></span>
+        <ol class="track-steps" aria-label="Delivery process steps">
+          <li><button class="tstep" type="button" aria-controls="step-detail" aria-pressed="false" data-text="Send your lane, dates, and freight details through the quote form, by phone, or by email. We come back with a clear, all-in rate."><span class="tdot"></span><span class="tnum">Step 1</span><span class="tname">Quote Request</span><template><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4zM8 9h8M8 13h8M8 17h5"/></svg></template></button></li>
+          <li><button class="tstep" type="button" aria-controls="step-detail" aria-pressed="false" data-text="Approve the rate and we lock in your load with a signed rate confirmation, so everyone works from the same terms."><span class="tdot"></span><span class="tnum">Step 2</span><span class="tname">Rate Confirmation</span><template><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg></template></button></li>
+          <li><button class="tstep" type="button" aria-controls="step-detail" aria-pressed="false" data-text="We match your freight with a certified, vetted carrier and the right equipment, checking operating authority, insurance, and safety record."><span class="tdot"></span><span class="tnum">Step 3</span><span class="tname">Carrier Matching</span><template><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></template></button></li>
+          <li><button class="tstep" type="button" aria-controls="step-detail" aria-pressed="false" data-text="The driver is dispatched and checks in at the shipper. Your freight is loaded and the Bill of Lading is signed."><span class="tdot"></span><span class="tnum">Step 4</span><span class="tname">Pickup &amp; Dispatch</span><template><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 6h13v10H1zM14 10h4l3 3v3h-7"/><circle cx="5.5" cy="18" r="1.8"/><circle cx="17.5" cy="18" r="1.8"/></svg></template></button></li>
+          <li><button class="tstep" type="button" aria-controls="step-detail" aria-pressed="false" data-text="Real-time visibility from pickup to destination, with proactive updates from our team if anything changes on the road."><span class="tdot"></span><span class="tnum">Step 5</span><span class="tname">In-Transit Tracking</span><template><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></template></button></li>
+          <li><button class="tstep" type="button" aria-controls="step-detail" aria-pressed="false" data-text="Your freight arrives, the receiver signs the Proof of Delivery, and the POD is sent straight to you."><span class="tdot"></span><span class="tnum">Step 6</span><span class="tname">Delivery &amp; POD</span><template><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></template></button></li>
+          <li><button class="tstep" type="button" aria-controls="step-detail" aria-pressed="false" data-text="You get one clean invoice with the POD attached, and a team that follows up to keep your next load just as smooth."><span class="tdot"></span><span class="tnum">Step 7</span><span class="tname">Invoice &amp; Follow-Up</span><template><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></template></button></li>
+        </ol>
       </div>
     </div>
+    <div class="step-detail" id="step-detail" aria-live="polite">
+      <div>
+        <div class="detail-card">
+          <span class="icon" aria-hidden="true"></span>
+          <div><p class="kicker">Step 1 of 7</p><h3>Quote Request</h3><p></p></div>
+        </div>
+      </div>
+    </div>
+    <div class="handoff">
+      <span class="bar" aria-hidden="true"></span>
+      <div class="txt">
+        <p>A smooth shipment, <span class="accent">without excuses</span>.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>A team that's always on call</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Vetted, insured carriers</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Signed BOL &amp; POD on every load</li>
+        </ul>
+      </div>
+      <a class="btn btn-white" href="contact.html">Request a Quote</a>
+    </div>
+    <a class="full-link" href="delivery.html">See the full delivery process <span class="arr">→</span></a>
   </div>
 </section>
 
@@ -114,24 +146,33 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Why American Patriot Freight</div>
-      <h2>Why Choose Us</h2>
-      <p class="lead">Learn why leading businesses select us as their logistics backbone.</p>
+      <h2>Why <span class="accent">Choose Us</span></h2>
+      <p class="lead">Learn why leading businesses select us as their logistics backbone. Hover or tap a card to see what's behind it.</p>
     </div>
-    <div class="grid-3">
-      <div class="card">
+    <div class="grid-3 xgrid">
+      <div class="card xcard">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
         <h3>Advanced Tracking</h3>
         <p>Real-time visibility from pickup to destination.</p>
+        <span class="stat">Pickup to POD</span>
+        <button class="xhint" type="button" aria-expanded="false">Hover to expand <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="xmore"><div><p>Know where your freight is at every stage: picked up, on the road, and delivered, with proactive updates from our team if anything changes along the way.</p></div></div>
       </div>
-      <div class="card">
+      <div class="card xcard">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/></svg></div>
         <h3>Unwavering Safety</h3>
         <p>A perfect safety record built on rigorous performance standards.</p>
+        <span class="stat">Vetted carriers only</span>
+        <button class="xhint" type="button" aria-expanded="false">Hover to expand <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="xmore"><div><p>Every carrier in our network is certified and highly vetted. We check operating authority, insurance, and safety performance before they ever haul your freight.</p></div></div>
       </div>
-      <div class="card">
+      <div class="card xcard">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></div>
         <h3>24/7 Support</h3>
         <p>Our logistics team is always on call to ensure seamless nationwide operations.</p>
+        <span class="stat">Always on call</span>
+        <button class="xhint" type="button" aria-expanded="false">Hover to expand <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="xmore"><div><p>Real people who answer the phone and own the problem. Call 844-527-6537 or email sales@americanpatriotfreight.com and you'll talk to the team moving your load.</p></div></div>
       </div>
     </div>
   </div>
@@ -144,9 +185,9 @@
       <p>Need a rate or have a question about shipping? We're here to keep your freight moving.</p>
       <div><a class="btn btn-red" href="contact.html">Request a Quote</a></div>
     </div>
-    <div class="panel" style="background:#fff;color:var(--ink);border:2px solid var(--navy)">
-      <h3 style="color:var(--navy)">Carriers</h3>
-      <p style="color:var(--muted)">Submit your Proof of Delivery and delivery documents, or ask about hauling for us.</p>
+    <div class="panel light">
+      <h3>Carriers</h3>
+      <p>Submit your Proof of Delivery and delivery documents, or ask about hauling for us.</p>
       <div><a class="btn btn-outline" href="carriers.html">Submit POD</a></div>
     </div>
   </div>
@@ -163,6 +204,7 @@
       <div>
         <h4>Company</h4>
         <a href="services.html">Services</a>
+        <a href="delivery.html">Delivery</a>
         <a href="about.html">About Us</a>
         <a href="carriers.html">Carriers</a>
         <a href="contact.html">Contact</a>
