@@ -92,9 +92,9 @@ function openTrack(q, quiet) {
     '<div><div class="kpi" style="border:0;padding:0"><div class="label">' + (l.status === 'delivered' ? 'Delivered' : 'Estimated arrival') + '</div><div class="value" style="font-size:1.3rem">' + (l.status === 'delivered' ? l.del : l.eta) + '</div><div class="delta">Last location: ' + l.at + '</div></div></div></div></div>' +
     '<div class="cols"><div class="box"><h2>Live map</h2>' +
     '<svg class="map" viewBox="0 0 600 260" role="img" aria-label="Route from ' + l.from + ' to ' + l.to + '">' +
-    '<rect width="600" height="260" fill="#e9ecf3"/><path d="M40 200 C 180 60, 380 240, 560 70" stroke="#b9bfd3" stroke-width="6" fill="none" stroke-linecap="round"/>' +
-    '<path d="M40 200 C 180 60, 380 240, 560 70" stroke="#2a2385" stroke-width="6" fill="none" stroke-linecap="round" pathLength="1" stroke-dasharray="' + pct + ' 1"/>' +
-    '<circle cx="40" cy="200" r="9" fill="#2a2385"/><circle cx="560" cy="70" r="9" fill="#c8302b"/>' +
+    '<rect width="600" height="260" fill="#e9ecf3"/><path d="M40 200 C 180 60, 380 240, 560 70" stroke="#b5c3d6" stroke-width="6" fill="none" stroke-linecap="round"/>' +
+    '<path d="M40 200 C 180 60, 380 240, 560 70" stroke="#1d4a8a" stroke-width="6" fill="none" stroke-linecap="round" pathLength="1" stroke-dasharray="' + pct + ' 1"/>' +
+    '<circle cx="40" cy="200" r="9" fill="#1d4a8a"/><circle cx="560" cy="70" r="9" fill="#c8302b"/>' +
     '<text x="40" y="232" font-size="14" font-weight="700" fill="#1b1b22" text-anchor="start">' + l.from + '</text>' +
     '<text x="560" y="50" font-size="14" font-weight="700" fill="#1b1b22" text-anchor="end">' + l.to + '</text>' +
     (l.status === 'transit' ? '<g><circle cx="' + x + '" cy="' + (l.done > 2 ? 150 : 125) + '" r="13" fill="#c8302b" stroke="#fff" stroke-width="3"/></g>' : '') +

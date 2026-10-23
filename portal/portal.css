@@ -5,7 +5,7 @@ body{background:var(--soft);min-height:100vh}
 .topbar .brand span{font-size:.85rem}
 .topbar .search{flex:1;max-width:420px;margin-left:24px}
 .topbar .search input{min-height:40px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff}
-.topbar .search input::placeholder{color:#c9c9e3}
+.topbar .search input::placeholder{color:#c6d3e6}
 .topbar .who{margin-left:auto;display:flex;align-items:center;gap:12px;font-size:.9rem}
 .avatar{width:38px;height:38px;border-radius:50%;background:var(--red);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:.85rem}
 .topbar a.logout{color:#fff;font-weight:600;font-size:.85rem;padding:10px 0}
@@ -54,11 +54,11 @@ table{width:100%;border-collapse:collapse;font-size:.9rem}
 th{text-align:left;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700;padding:10px 12px;border-bottom:2px solid var(--line);white-space:nowrap}
 td{padding:12px;border-bottom:1px solid var(--line);vertical-align:middle;white-space:nowrap}
 tr.click{cursor:pointer}
-tr.click:hover td{background:#f8f8fc}
+tr.click:hover td{background:#f6f9fc}
 td .sub{display:block;font-size:.8rem;color:var(--muted)}
 
 .pill{display:inline-block;padding:3px 10px;border-radius:999px;font-size:.78rem;font-weight:700;white-space:nowrap}
-.p-transit{background:#e3e8ff;color:#2a2385}
+.p-transit{background:#e0ebfa;color:#1d4a8a}
 .p-delivered{background:#dff3e4;color:#1d6b33}
 .p-booked{background:#eeeeee;color:#3d3d48}
 .p-pickup{background:#fff0d6;color:#8a5200}
@@ -114,7 +114,7 @@ td .sub{display:block;font-size:.8rem;color:var(--muted)}
 .rep{display:flex;gap:16px;align-items:center}
 .rep .avatar{width:56px;height:56px;font-size:1.1rem;background:var(--navy)}
 .msg{border:1px solid var(--line);border-radius:8px;padding:12px 14px;margin-bottom:10px;max-width:640px}
-.msg.me{margin-left:auto;background:#eef0ff;border-color:#d6dbff}
+.msg.me{margin-left:auto;background:#eaf1fb;border-color:#cfdcf2}
 .msg .meta{font-size:.78rem;color:var(--muted);margin-bottom:4px}
 .toggle-row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:12px 0;border-bottom:1px solid var(--line)}
 .toggle-row input{width:22px;height:22px;min-height:0}
