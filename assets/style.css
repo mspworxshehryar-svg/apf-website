@@ -317,7 +317,7 @@ legend{font-weight:800;color:var(--navy);font-size:1.05rem;margin-bottom:12px;pa
 .site-footer a{color:#c6d3e6;text-decoration:none;display:block;padding:6px 0;transition:color .2s,translate .25s var(--ease-out)}
 .site-footer a:hover{color:#fff;translate:4px 0}
 .site-footer .brand:hover{translate:0 0}
-.site-footer .brand img{height:64px}
+.site-footer .brand img{height:120px}
 .legal{border-top:1px solid rgba(255,255,255,.15);margin-top:40px;padding-top:20px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-size:.85rem}
 
 /* scroll reveal (only when JS is running) */
